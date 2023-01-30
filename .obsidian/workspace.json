@@ -1,0 +1,158 @@
+{
+  "main": {
+    "id": "5d86601e10ef3652",
+    "type": "split",
+    "children": [
+      {
+        "id": "09dd131f4755035e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "baecf92a046548aa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 【DSA】数据结构与算法(C版本)/Ch02-3 链表逆置.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "17dc25d5d7878b73",
+    "type": "split",
+    "children": [
+      {
+        "id": "f97ad135af6f2b4f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4025cd6c9dbe1b3f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0ece4ce0b372c343",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "cdadc3d68f79c0e9",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "39ea3642c53cb383",
+    "type": "split",
+    "children": [
+      {
+        "id": "0deaaf3cf7ff7231",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "62b4dcfbd0e71752",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "01 【DSA】数据结构与算法(C版本)/Ch02-3 链表逆置.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "eb36a46f0d7b5021",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "01 【DSA】数据结构与算法(C版本)/Ch02-3 链表逆置.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a84f9a86add12b75",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "682c0ede080ce7ea",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "01 【DSA】数据结构与算法(C版本)/Ch02-3 链表逆置.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "baecf92a046548aa",
+  "lastOpenFiles": [
+    "01 【DSA】数据结构与算法(C版本)/Ch02-1 顺序表.md",
+    "01 【DSA】数据结构与算法(C版本)/Ch01 绪论与概要.md",
+    "01 【DSA】数据结构与算法(C版本)/00 数据结构索引.md",
+    "01 【DSA】数据结构与算法(C版本)/Ch05-3 二叉线索树.md",
+    "01 【DSA】数据结构与算法(C版本)/Ch05-2 二叉树遍历.md"
+  ]
+}
