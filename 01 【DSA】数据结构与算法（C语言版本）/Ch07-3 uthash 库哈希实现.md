@@ -7,7 +7,7 @@
 于是，`uthash`就出现了！
 `uthash` 是C的比较优秀的开源代码，它实现了常见的hash操作函数，例如查找、插入、删除等。该套开源代码采用宏的方式实现hash函数的相关功能，支持C语言的任意数据结构作为key值（可以是自定义的struct或基本数据类型），甚至可以采用多个值作为key，需要注意的是对于不同类型的key值，hash函数声明略有不同。
 `uthash`相当于为我们提供了一个专门用于处理哈希表的函数库，在学会它里面基本函数的用法后，就可以应用在自己的程序中了。
-![[img/Sx 补充/uthash/01 Hash.jpg]]
+![](img/Sx%20补充/uthash/01%20Hash.jpg)
 **鉴于网上有很多关于**`uthash`**的教程，但是对新手都不友好，这里作者自绘插图，更方便表示哈希的**`uthash`**常用操作**。
 
 # 二、hash预定义
@@ -31,7 +31,8 @@ typedef struct {
 key的数据类型可以是**整型、字符、指针**等，
 value的类型也是**自定义**的，并且value是不一定存在的。
 我们可以在结构体中只定义key值，这样哈希表就只关注表中有没有某个key，而不关心它对应的value值；这样构造出的哈希表可以看作是python中的set，可以保证内部无重复的元素（因为哈希表的key不能有重复）：
-![[img/Sx 补充/uthash/02 key-Value.png]]
+
+![](img/Sx%20补充/uthash/02%20key-Value.png)
 
 ```c
 typedef struct {
@@ -44,8 +45,7 @@ hh是内部使用的hash处理句柄，在使用过程中，只需要在结构�
 
 # 三. 初始化哈希表
 可以想到哈希表就是上面这种键-值对的数组，因此我们定义一个指向struct类型的指针就可以表示哈希表 (数组和指针的关系)，可以对它进行增删改查操作。
-![[img/Sx 补充/uthash/03 Hashtable.png]]
-
+![](img/Sx%20补充/uthash/03%20Hashtable.png)
 初始化一个哈希表：
 ```c
 typedef struct {
@@ -68,7 +68,8 @@ HASH_FIND_INT(pFindHash, &key, pDstHash);    /* pDstHash: output pointer */
 - `&key`：     指向想查询的key的地址；
 - `pDstHash`： 表示该函数的输出值，即我们根据key查到的键值对；它是一个指向哈希表HashTable中该键值对的指针。
 因此在调用该函数前，要先定义pDstpHash，完整用法如下：
-![[img/Sx 补充/uthash/04 Hashfind.png]]
+
+![](img/Sx%20补充/uthash/04%20Hashfind.png)
 
 ```c
 /* 获得key的键值对的函数 */
@@ -81,7 +82,8 @@ HashTable *FindHashbyKey(int key) {
 
 # 五. 插入元素 HASH_ADD_INT
 由于要保持哈希表中的唯一性，在插入键值对之前，一定要先判断表中是否已经存在要插入的键，如果已存在，就直接修改键对应的value；如果没有存在，插入键值对。
-![[img/Sx 补充/uthash/05 HashInsert.png]]
+
+![](img/Sx%20补充/uthash/05%20HashInsert.png)
 
 函数举例
 ```c
