@@ -2,6 +2,10 @@
 
 # [35]   KMP算法
 由D.E.Knuth，J.H.Morris和V.R.Pratt提出，因此称为 KMP算法，该算法对朴素模式匹配算法优化而得。
+
+[FAST PATTERN MATCHING IN STRINGS_1977.pdf (ufpe.br)](https://www.cin.ufpe.br/~paguso/courses/if767/bib/KMP_1977.pdf)
+
+
 ## 1. 场景复现
 **场景**：
 已知模式串 `T`,`S` , 循环中，遍历串字符，当第i（i > 1）个元素匹配失败时,第 i 个元素之前的元素是已经匹配成功的。
