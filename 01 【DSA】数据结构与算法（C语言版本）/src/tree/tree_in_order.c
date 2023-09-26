@@ -28,15 +28,15 @@ void OutPutArray(int* array, int len)
     return;
 }
 
-void PreOrderTraverse(BiTree binaryTree, int* array, int* pos)
+void InOrderTraverse(BiTree binaryTree, int* array, int* pos)
 {
     if (binaryTree == NULL) {
         return;
     }
 
+    InOrderTraverse(binaryTree->lchild, array, pos);
     PushBack(array, pos, binaryTree->data);
-    PreOrderTraverse(binaryTree->lchild, array, pos);
-    PreOrderTraverse(binaryTree->rchild, array, pos);
+    InOrderTraverse(binaryTree->rchild, array, pos);
 
     return;
 }
@@ -44,7 +44,7 @@ void PreOrderTraverse(BiTree binaryTree, int* array, int* pos)
 void BiTreeInsertToArray(BiTree binaryTree, int* array)
 {
     int pos = 0;
-    PreOrderTraverse(binaryTree, array, &pos);
+    InOrderTraverse(binaryTree, array, &pos);
     OutPutArray(array, pos);
 
     return;
@@ -109,7 +109,7 @@ int main()
     BiTree tree = CreateBiTree();
     int array[ARRAY_MAX_SIZE];
 
-    // 预期输出： 1 2 4 7 5 3 6  ---> 前序遍历
+    // 预期输出： 7 4 2 5 1 6 3  ---> 中序遍历
     BiTreeInsertToArray(tree, array);
     
     return 0;
