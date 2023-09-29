@@ -17,13 +17,13 @@ bool CheckMatching(BiTree tmp, int target)
 {
     // 必须首先检查pre是否为空，排除首次匹配直接读取空指针
     // 只有在第一次匹配完成后，才知道后继是谁
-    if (pre == NULL) 
+    if (pre == NULL || pre->data != target) 
     {
         pre = tmp;
         return false;
     }
     // 与上一个节点匹配，那么当前节点就是要找的后继
-    if (pre->data == target) 
+    else
     {
         finalNode = tmp;
     /* 这里，一定要补上，清空pre节点
@@ -31,11 +31,6 @@ bool CheckMatching(BiTree tmp, int target)
        就会更新改写finalNode，导致寻找后继节点失效 */
         pre = NULL;    
         return true;
-    } 
-    else 
-    {
-        pre = tmp;
-        return false;
     }
 }
 
