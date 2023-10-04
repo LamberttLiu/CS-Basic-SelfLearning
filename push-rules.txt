@@ -1,3 +1,13 @@
 git add .
 git commit -m "【修改描述】..."
 git push
+
+
+# 查询字数
+cat *.md | wc -m
+
+# 查询行数
+cat *.md | wc -l
+
+# 查找图片数量
+find -name "*.JPG" -o -name "*.jpg" | wc -l
