@@ -300,7 +300,7 @@ int KMP(char * t, char * p)
 
 程序实现：
 ```c
-void getNext(char * p, int * next)
+void getNext(char *p, int *next)
 {
     next[0] = -1;
     int i = 0, j = -1;
