@@ -1,3 +1,6 @@
+#ifndef ADJACENCY_MATRIX_H
+#define ADJACENCY_MATRIX_H
+
 #include <stdio.h>
 #include <limits.h>
 
@@ -27,3 +30,5 @@ typedef struct
     // 图当前的顶点数和边数/弧数
     int vexNum, arcNum;                             
 } MGraph_Weight;
+
+#endif // ADJACENCY_MATRIX_H

@@ -1,3 +1,6 @@
+#ifndef ADJACENCY_MULTI_LIST_H
+#define ADJACENCY_MULTI_LIST_H
+
 #include <stdio.h>
 #include <limits.h>
 
@@ -31,3 +34,5 @@ typedef struct {
     VexBox adjmulist[MaxVertexNum]; // 存储图中顶点的顺序表
     int vexnum, edgenum;            // 记录图中的顶点数量和边数量
 } AMLGraph;
+
+#endif // ADJACENCY_MULTI_LIST_H

@@ -1,3 +1,6 @@
+#ifndef ADJACENCY_LIST_H
+#define ADJACENCY_LIST_H
+
 #include <stdio.h>
 #include <limits.h>
 
@@ -25,3 +28,4 @@ typedef struct adjacency_list
     int vexNum, arcNum;
 } ALGraph;      // Adjacency List Graph
 
+#endif // ADJACENCY_LIST_H

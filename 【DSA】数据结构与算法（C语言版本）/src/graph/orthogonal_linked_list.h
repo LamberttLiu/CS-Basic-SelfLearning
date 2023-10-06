@@ -1,3 +1,6 @@
+#ifndef ORTHOGONAL_LINKED_LIST
+#define ORTHOGONAL_LINKED_LIST
+
 #include <stdio.h>
 #include <limits.h>
 
@@ -25,3 +28,5 @@ typedef struct {
     VexNode xlist[MaxVertexNum];    // 存储顶点的顺序表
     int vexnum, arcnum;             // 记录图的顶点数和弧数
 } OLGraph;
+
+#endif // ORTHOGONAL_LINKED_LIST
