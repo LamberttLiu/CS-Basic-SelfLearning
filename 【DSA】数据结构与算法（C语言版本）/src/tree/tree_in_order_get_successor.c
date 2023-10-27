@@ -22,13 +22,13 @@ bool CheckMatching(BiTree tmp, int target)
         pre = tmp;
         return false;
     }
-    // 与上一个节点匹配，那么当前节点就是要找的后继
+    // 与上一个结点匹配，那么当前结点就是要找的后继
     else
     {
         finalNode = tmp;
-    /* 这里，一定要补上，清空pre节点
-       否则，pre保存了之前的数据，下一个节点在匹配的时候，判断是true，
-       就会更新改写finalNode，导致寻找后继节点失效 */
+    /* 这里，一定要补上，清空pre结点
+       否则，pre保存了之前的数据，下一个结点在匹配的时候，判断是true，
+       就会更新改写finalNode，导致寻找后继结点失效 */
         pre = NULL;    
         return true;
     }
