@@ -1,0 +1,5 @@
+.obsidian
+.vscode
+*/build/*
+.vault-stats
+*.exe
