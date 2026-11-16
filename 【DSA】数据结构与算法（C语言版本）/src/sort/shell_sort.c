@@ -1,49 +1,35 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
-#ifndef N
-#define N 100
-#endif
-int arr[N];
-
-int Shell_Sort(int *arr)
+/* 实际元素位于 array[1..n]，array[0] 仅作暂存。 */
+void shellSort(int array[], int n)
 {
-    register int i, j, k, tmp;
-    int incre; // 选择一个增量，这里我们用简单的二分法
-
-    for (incre = N / 20; incre > 0; incre /= 2)
-    {
-        for (i = incre; i < N / 10; i++)
-        {
-            tmp = arr[i];
-            // 很明显和插排的不同就是插排这里是j = i - 1
-            j = i - incre;
-            while (j >= 0 && tmp < arr[j])
-            {
-                arr[j + incre] = arr[j];
-                j -= incre;
+    if (n < 2) {
+        return;
+    }
+    for (int d = n / 2; d >= 1; d /= 2) {
+        for (int i = d + 1; i <= n; ++i) {
+            if (array[i] < array[i - d]) {
+                array[0] = array[i];
+                int j = i - d;
+                while (j > 0 && array[j] > array[0]) {
+                    array[j + d] = array[j];
+                    j -= d;
+                }
+                array[j + d] = array[0];
             }
-            arr[j + incre] = tmp;
         }
     }
 }
 
-int main(int argc, int *argv[])
+int main(void)
 {
-    int i;
-    printf("please enter 10 numbers: \n");
+    int array[] = {0, 49, 38, 65, 97, 76, 13, 27, 49};
+    int n = (int)(sizeof array / sizeof array[0]) - 1;
 
-    for (i = 0; i < N / 10; i++)
-    {
-        scanf("%d", &arr[i]);
+    shellSort(array, n);
+    for (int i = 1; i <= n; ++i) {
+        printf("%s%d", i == 1 ? "" : " ", array[i]);
     }
-    Shell_Sort(arr);
-
-    printf("\n");
-    printf("the ordered array is: \n");
-    for (i = 0; i < N / 10; i++)
-    {
-        printf("%4d", arr[i]);
-    }
+    putchar('\n');
+    return 0;
 }
