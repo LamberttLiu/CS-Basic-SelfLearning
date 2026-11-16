@@ -1,95 +1,56 @@
-// Heap Sort in C
 #include <stdio.h>
 
-// Function to swap the position of two elements
-void swap(int* a, int* b)
+/* Historical version credited _i_plus_plus_. This version uses the
+   1-based, iterative implementation explained in article 30. */
+/* 两个孩子子树已是大根堆时，调整以 k 为根的子树。 */
+void HeapAdjust(int array[], int k, int n)
 {
-
-	int temp = *a;
-	*a = *b;
-	*b = temp;
+    int value = array[k];
+    while (k <= n / 2) {
+        int child = 2 * k;
+        if (child < n && array[child] < array[child + 1]) {
+            ++child;
+        }
+        if (value >= array[child]) {
+            break;
+        }
+        array[k] = array[child];
+        k = child;
+    }
+    array[k] = value;
 }
 
-// To heapify a subtree rooted with node i
-// which is an index in arr[].
-// n is size of heap
-void heapify(int arr[], int N, int i)
+void BuildMaxHeap(int array[], int n)
 {
-	// Find largest among root,
-	// left child and right child
-
-	// Initialize largest as root
-	int largest = i;
-
-	// left = 2*i + 1
-	int left = 2 * i + 1;
-
-	// right = 2*i + 2
-	int right = 2 * i + 2;
-
-	// If left child is larger than root
-	if (left < N && arr[left] > arr[largest])
-
-		largest = left;
-
-	// If right child is larger than largest
-	// so far
-	if (right < N && arr[right] > arr[largest])
-
-		largest = right;
-
-	// Swap and continue heapifying
-	// if root is not largest
-	// If largest is not root
-	if (largest != i) {
-
-		swap(&arr[i], &arr[largest]);
-
-		// Recursively heapify the affected
-		// sub-tree
-		heapify(arr, N, largest);
-	}
+    for (int k = n / 2; k >= 1; --k) {
+        HeapAdjust(array, k, n);
+    }
 }
 
-// Main function to do heap sort
-void heapSort(int arr[], int N)
+/* 实际元素位于 array[1..n]，array[0] 不参与排序。 */
+void HeapSort(int array[], int n)
 {
-
-	// Build max heap
-	for (int i = N / 2 - 1; i >= 0; i--)
-
-		heapify(arr, N, i);
-
-	// Heap sort
-	for (int i = N - 1; i >= 0; i--) {
-
-		swap(&arr[0], &arr[i]);
-
-		// Heapify root element
-		// to get highest element at
-		// root again
-		heapify(arr, i, 0);
-	}
+    if (n < 2) {
+        return;
+    }
+    BuildMaxHeap(array, n);
+    for (int end = n; end > 1; --end) {
+        int temp = array[1];
+        array[1] = array[end];
+        array[end] = temp;
+        HeapAdjust(array, 1, end - 1);
+    }
 }
 
-// A utility function to print array of size n
-void printArray(int arr[], int N)
+int main(void)
 {
-	for (int i = 0; i < N; i++)
-		printf("%d ", arr[i]);
-	printf("\n");
+    int array[] = {0, 87, 53, 65, 45, 17, 32, 9, 1};
+    int n = (int)(sizeof array / sizeof array[0]) - 1;
+
+    HeapSort(array, n);
+    for (int i = 1; i <= n; ++i) {
+        printf("%s%d", i == 1 ? "" : " ", array[i]);
+    }
+    putchar('\n');
+    return 0;
 }
-
-// Driver's code
-int main()
-{
-	int arr[] = { 12, 11, 13, 5, 6, 7 };
-	int N = sizeof(arr) / sizeof(arr[0]);
-
-	// Function call
-	heapSort(arr, N);
-	printf("Sorted array is\n");
-	printArray(arr, N);
-}
-
-// This code is contributed by _i_plus_plus_.
